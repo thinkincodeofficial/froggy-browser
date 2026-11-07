@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src * data:; style-src 'self'; script-src 'self'"
+    />
+    <title>Froggy</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside id="sidebar">
+      <div class="brand drag">
+        <img src="logo.svg" alt="" />
+        <span>Froggy</span>
+      </div>
+
+      <div id="tabs-panel">
+        <button id="new-tab" class="row-button"><span data-icon="plus"></span><span class="label">New Tab</span></button>
+        <div id="tab-list"></div>
+      </div>
+
+      <div id="settings-panel" hidden>
+        <h2>Settings</h2>
+
+        <section>
+          <h3>Accent</h3>
+          <div id="swatches"></div>
+        </section>
+
+        <section>
+          <h3>Search engine</h3>
+          <select id="search-engine">
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="brave">Brave Search</option>
+          </select>
+        </section>
+
+        <section>
+          <label class="switch-row">
+            <span>Block ads &amp; trackers</span>
+            <input id="adblock-toggle" type="checkbox" />
+          </label>
+        </section>
+
+        <section>
+          <h3>Shortcuts</h3>
+          <dl class="shortcuts">
+            <dt>Ctrl+T</dt><dd>New tab</dd>
+            <dt>Ctrl+W</dt><dd>Close tab</dd>
+            <dt>Ctrl+L</dt><dd>Address bar</dd>
+            <dt>Ctrl+Tab</dt><dd>Next tab</dd>
+            <dt>Ctrl+Shift+S</dt><dd>Split view</dd>
+            <dt>Ctrl+Shift+P</dt><dd>Pop out tab</dd>
+            <dt>Ctrl+B</dt><dd>Toggle sidebar</dd>
+            <dt>F12</dt><dd>Developer tools</dd>
+          </dl>
+        </section>
+      </div>
+
+      <footer>
+        <button id="sidebar-toggle" class="icon-button" title="Toggle sidebar (Ctrl+B)"><span data-icon="sidebar"></span></button>
+        <button id="settings-button" class="icon-button" title="Settings"><span data-icon="settings"></span></button>
+      </footer>
+    </aside>
+
+    <header id="toolbar" class="drag">
+      <button id="back" class="icon-button" title="Back (Alt+Left)"><span data-icon="back"></span></button>
+      <button id="forward" class="icon-button" title="Forward (Alt+Right)"><span data-icon="forward"></span></button>
+      <button id="reload" class="icon-button" title="Reload (Ctrl+R)"><span data-icon="reload"></span></button>
+      <form id="address-form">
+        <input id="address" type="text" spellcheck="false" autocomplete="off" placeholder="Search or enter address" />
+      </form>
+      <button id="shield" class="icon-button wide" title="Ad blocker"><span data-icon="shield"></span><span id="blocked-count">0</span></button>
+      <button id="split" class="icon-button" title="Split view (Ctrl+Shift+S)"><span data-icon="split"></span></button>
+      <button id="float" class="icon-button" title="Pop out tab (Ctrl+Shift+P)"><span data-icon="float"></span></button>
+    </header>
+
+    <main id="content"></main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

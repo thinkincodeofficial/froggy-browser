@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="skin" gradientUnits="userSpaceOnUse" x1="16" y1="16" x2="112" y2="120">
+      <stop offset="0" stop-color="#9af5b8"/>
+      <stop offset="0.55" stop-color="#3ccf6e"/>
+      <stop offset="1" stop-color="#15803d"/>
+    </linearGradient>
+  </defs>
+  <!-- eye bumps -->
+  <circle cx="40" cy="42" r="22" fill="url(#skin)"/>
+  <circle cx="88" cy="42" r="22" fill="url(#skin)"/>
+  <!-- head -->
+  <ellipse cx="64" cy="80" rx="54" ry="40" fill="url(#skin)"/>
+  <!-- globe lines: the head doubles as a world -->
+  <path d="M14 82 Q64 96 114 82" fill="none" stroke="#0b3d20" stroke-opacity="0.18" stroke-width="3"/>
+  <path d="M64 41 Q44 80 64 120 M64 41 Q84 80 64 120" fill="none" stroke="#0b3d20" stroke-opacity="0.12" stroke-width="3"/>
+  <!-- eyes -->
+  <circle cx="40" cy="40" r="13" fill="#ffffff"/>
+  <circle cx="88" cy="40" r="13" fill="#ffffff"/>
+  <circle cx="43" cy="42" r="7" fill="#0b1f14"/>
+  <circle cx="91" cy="42" r="7" fill="#0b1f14"/>
+  <circle cx="45.5" cy="39" r="2.2" fill="#ffffff"/>
+  <circle cx="93.5" cy="39" r="2.2" fill="#ffffff"/>
+  <!-- cheeks + smile -->
+  <circle cx="28" cy="88" r="7" fill="#fb7185" opacity="0.45"/>
+  <circle cx="100" cy="88" r="7" fill="#fb7185" opacity="0.45"/>
+  <path d="M42 86 Q64 106 86 86" fill="none" stroke="#0b3d20" stroke-width="5" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'; script-src 'self'" />
+    <title>New Tab</title>
+    <link rel="stylesheet" href="newtab.css" />
+  </head>
+  <body>
+    <main>
+      <div class="glow"></div>
+      <img class="logo" src="logo.svg" alt="Froggy" />
+      <h1>Froggy</h1>
+      <form id="search">
+        <input id="query" type="text" spellcheck="false" autocomplete="off" placeholder="Search the web" autofocus />
+      </form>
+      <p class="tips">
+        <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd> split view
+        <span>·</span>
+        <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> floating window
+        <span>·</span>
+        <kbd>Ctrl</kbd>+<kbd>B</kbd> hide sidebar
+      </p>
+    </main>
+    <script src="newtab.js"></script>
+  </body>
+</html>

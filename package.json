@@ -1,0 +1,92 @@
+{
+  "name": "froggy",
+  "productName": "Froggy",
+  "version": "0.1.0",
+  "description": "A fast, customizable browser with vertical tabs, split view, floating windows, built-in ad blocking and Chrome extension support.",
+  "main": "src/main/main.js",
+  "author": "Froggy",
+  "scripts": {
+    "start": "node scripts/start.js",
+    "icon": "node scripts/make-icon.js",
+    "dist": "electron-builder --publish never",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never",
+    "dist:linux": "electron-builder --linux --publish never"
+  },
+  "keywords": [
+    "browser",
+    "electron",
+    "froggy"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0"
+  },
+  "dependencies": {
+    "@ghostery/adblocker-electron": "^2.20.3"
+  },
+  "build": {
+    "appId": "com.froggy.browser",
+    "productName": "Froggy",
+    "copyright": "Copyright © 2026 Froggy",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "extensions",
+        "to": "extensions",
+        "filter": [
+          "**/*",
+          "!README.md"
+        ]
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Froggy",
+      "artifactName": "Froggy-Setup-${arch}.${ext}"
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "universal"
+          ]
+        }
+      ],
+      "category": "public.app-category.productivity",
+      "artifactName": "Froggy-mac-${arch}.${ext}"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Network",
+      "maintainer": "Froggy",
+      "synopsis": "A fast, customizable browser",
+      "artifactName": "Froggy-linux-${arch}.${ext}"
+    }
+  }
+}
